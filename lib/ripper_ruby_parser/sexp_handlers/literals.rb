@@ -23,6 +23,8 @@ module RipperRubyParser
         val = process(list.first)
         if val.sexp_type == :str
           val
+        elsif val.sexp_type == :void_stmt
+          s(:evstr)
         else
           s(:evstr, val)
         end
